@@ -33,8 +33,7 @@ jobs:
       - name: build the image
         run: |
           docker buildx build \
-          --build-arg PG_VERSION=${{ env.IMAGE_TAG }} \
-          --tag ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
+          --tag ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest \
           --platform ${{ env.PLATFORM_LIST }} \
           --push \
           .
