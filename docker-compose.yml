@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  server:
+    image: 'slavazais/factorio-server:latest'
+    ports:
+      - '34197:34197/udp'
+    volumes:
+      - './saves:/app/saves'
+    networks:
+      - 'factorio-server'
+    restart: 'unless-stopped'
+
+networks:
+  factorio-server:
