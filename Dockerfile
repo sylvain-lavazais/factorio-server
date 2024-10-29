@@ -14,6 +14,7 @@ WORKDIR /app
 COPY --chown=app scripts/check-folders.sh .
 COPY --chown=app scripts/download-latest.sh .
 COPY --chown=app scripts/docker-entrypoint.sh .
+COPY --chown=app templates ./templates
 COPY --chown=app mods ./mods
 
 EXPOSE 34197
